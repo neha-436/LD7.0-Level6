@@ -39,11 +39,11 @@ export function Flashcard({
           <span className="mt-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
             tap to reveal
           </span>
-          {command.flags?.length ? (
+          {/* {command.flags?.length ? (
             <span className="mt-2 rounded-full border border-border px-2 py-0.5 font-mono text-[10px] text-muted-foreground">
               {command.flags.length} flags
             </span>
-          ) : null}
+          ) : null} */}
         </div>
 
         {/* BACK — details */}
@@ -56,16 +56,16 @@ export function Flashcard({
           }}
         >
           <code
-            className="font-mono text-base font-bold"
+            className="font-mono text-2xl font-bold text-card-foreground"
             style={{ color: accent }}
           >
-            {command.name}
+            YES!
           </code>
-          <p className="mt-1.5 text-xs leading-relaxed text-card-foreground/90">
+          {/* <p className="mt-1.5 text-xs leading-relaxed text-card-foreground/90">
             {command.description}
-          </p>
+          </p> */}
 
-          {command.flags?.length ? (
+          {/* {command.flags?.length ? (
             <div className="mt-2 flex-1 space-y-1 overflow-y-auto pr-1">
               {command.flags.map((f) => (
                 <div key={f.flag} className="flex gap-2 text-[11px]">
@@ -80,16 +80,16 @@ export function Flashcard({
             </div>
           ) : (
             <div className="flex-1" />
-          )}
+          )} */}
 
-          {command.example ? (
+          {/* {command.example ? (
             <div className="mt-2 rounded-md border border-border bg-background/60 px-2 py-1.5">
               <span className="font-mono text-[11px] text-primary">
                 <span className="text-muted-foreground">$ </span>
                 {command.example}
               </span>
             </div>
-          ) : null}
+          ) : null} */}
         </div>
       </div>
     </button>

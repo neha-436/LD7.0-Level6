@@ -155,8 +155,8 @@ export const topics: Topic[] = [
     id: 'permissions',
     name: 'Earth',
     tagline: 'Control who can do what',
-    color: '#e76f51',
-    glow: '#e76f51',
+    color: '#8ecae6',
+    glow: '#8ecae6',
     size: 0.95,
     commands: [
       {
@@ -191,41 +191,22 @@ export const topics: Topic[] = [
     size: 1.05,
     commands: [
       {
-        name: 'ps',
+        name: 'TUXY are you here??',
         description: 'Report a snapshot of current processes.',
-        flags: [
-          { flag: 'aux', desc: 'All processes with detail' },
-          { flag: '-ef', desc: 'Full-format listing' },
-        ],
-        example: 'ps aux | grep node',
-      },
-      {
-        name: 'top',
-        description: 'Live view of processes and resource usage.',
-        example: 'top',
-      },
-      {
-        name: 'kill',
-        description: 'Send a signal to a process by PID.',
-        flags: [
-          { flag: '-9', desc: 'SIGKILL — force kill' },
-          { flag: '-15', desc: 'SIGTERM — graceful stop (default)' },
-        ],
-        example: 'kill -9 1234',
-      },
-      {
-        name: 'jobs',
-        description: 'List background jobs in the current shell.',
-        example: 'jobs -l',
-      },
+        // flags: [
+        //   { flag: 'aux', desc: 'All processes with detail' },
+        //   { flag: '-ef', desc: 'Full-format listing' },
+        // ],
+        // example: 'ps aux | grep node',
+      }
     ],
   },
   {
     id: 'text',
     name: 'Jupiter',
     tagline: 'Search & transform text',
-    color: '#8ecae6',
-    glow: '#8ecae6',
+    color: '#e76f51',
+    glow: '#e76f51',
     size: 1,
     commands: [
       {
