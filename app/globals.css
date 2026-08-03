@@ -1,26 +1,251 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-star: var(--star);
+  --color-glow: var(--glow);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Deep space theme — dark by default */
+:root {
+  color-scheme: dark;
+  --background: oklch(0.13 0.035 264);
+  --foreground: oklch(0.95 0.015 250);
+  --card: oklch(0.19 0.04 262);
+  --card-foreground: oklch(0.96 0.012 250);
+  --popover: oklch(0.17 0.04 262);
+  --popover-foreground: oklch(0.96 0.012 250);
+  --primary: oklch(0.82 0.13 205);
+  --primary-foreground: oklch(0.15 0.04 260);
+  --secondary: oklch(0.26 0.05 262);
+  --secondary-foreground: oklch(0.95 0.015 250);
+  --muted: oklch(0.24 0.04 262);
+  --muted-foreground: oklch(0.72 0.03 250);
+  --accent: oklch(0.83 0.14 82);
+  --accent-foreground: oklch(0.16 0.04 260);
+  --destructive: oklch(0.63 0.22 25);
+  --border: oklch(0.7 0.05 250 / 18%);
+  --input: oklch(0.7 0.05 250 / 22%);
+  --ring: oklch(0.82 0.13 205);
+  --chart-1: oklch(0.82 0.13 205);
+  --chart-2: oklch(0.83 0.14 82);
+  --chart-3: oklch(0.7 0.15 160);
+  --chart-4: oklch(0.72 0.16 25);
+  --chart-5: oklch(0.75 0.12 300);
+  --star: oklch(0.98 0.02 250);
+  --glow: oklch(0.82 0.13 205);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.17 0.04 262);
+  --sidebar-foreground: oklch(0.95 0.015 250);
+  --sidebar-primary: oklch(0.82 0.13 205);
+  --sidebar-primary-foreground: oklch(0.15 0.04 260);
+  --sidebar-accent: oklch(0.26 0.05 262);
+  --sidebar-accent-foreground: oklch(0.95 0.015 250);
+  --sidebar-border: oklch(0.7 0.05 250 / 18%);
+  --sidebar-ring: oklch(0.82 0.13 205);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ---------- Space animations ---------- */
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-2%, 2%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes sun-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 80px 20px rgba(247, 147, 61, 0.5),
+      0 0 160px 60px rgba(232, 98, 42, 0.32);
+  }
+  50% {
+    box-shadow:
+      0 0 110px 30px rgba(247, 147, 61, 0.7),
+      0 0 210px 80px rgba(232, 98, 42, 0.45);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-rev {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes planet-rotate {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 200px 0;
+  }
+}
+
+@keyframes warp {
+  0% {
+    opacity: 0;
+    transform: scaleY(1);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(60);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 6px var(--glow)) drop-shadow(0 0 18px var(--glow));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px var(--glow)) drop-shadow(0 0 34px var(--glow));
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle var(--dur, 4s) ease-in-out infinite;
+}
+.animate-drift {
+  animation: drift 26s ease-in-out infinite;
+}
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+.animate-glow-pulse {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+.animate-rise {
+  animation: rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-sun-pulse {
+  animation: sun-pulse 6s ease-in-out infinite;
+}
+.orbit-ring-spin {
+  animation: orbit-spin var(--period, 40s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+.orbit-planet-spin {
+  animation: orbit-rev var(--period, 40s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-twinkle,
+  .animate-drift,
+  .animate-float-slow,
+  .animate-glow-pulse,
+  .animate-sun-pulse,
+  .orbit-ring-spin,
+  .orbit-planet-spin,
+  .animate-rise {
+    animation: none;
+  }
 }
