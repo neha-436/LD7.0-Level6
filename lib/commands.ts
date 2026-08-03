@@ -52,7 +52,7 @@ export type Topic = {
 export const topics: Topic[] = [
   {
     id: 'navigation',
-    name: 'Navigation',
+    name: 'Mercury',
     tagline: 'Move through the file system',
     color: '#4cc9f0',
     glow: '#4cc9f0',
@@ -97,7 +97,7 @@ export const topics: Topic[] = [
   },
   {
     id: 'files',
-    name: 'File Ops',
+    name: 'Venus',
     tagline: 'Create, copy, move & remove',
     color: '#f4a261',
     glow: '#f4a261',
@@ -153,7 +153,7 @@ export const topics: Topic[] = [
   },
   {
     id: 'permissions',
-    name: 'Permissions',
+    name: 'Earth',
     tagline: 'Control who can do what',
     color: '#e76f51',
     glow: '#e76f51',
@@ -184,7 +184,7 @@ export const topics: Topic[] = [
   },
   {
     id: 'processes',
-    name: 'Processes',
+    name: 'Mars',
     tagline: 'Watch & control running tasks',
     color: '#2a9d8f',
     glow: '#2a9d8f',
@@ -222,7 +222,7 @@ export const topics: Topic[] = [
   },
   {
     id: 'text',
-    name: 'Text Tools',
+    name: 'Jupiter',
     tagline: 'Search & transform text',
     color: '#8ecae6',
     glow: '#8ecae6',
@@ -273,7 +273,7 @@ export const topics: Topic[] = [
   },
   {
     id: 'networking',
-    name: 'Networking',
+    name: 'Saturn',
     tagline: 'Talk to other machines',
     color: '#90be6d',
     glow: '#90be6d',
@@ -311,7 +311,7 @@ export const topics: Topic[] = [
   },
   {
     id: 'packages',
-    name: 'Packages',
+    name: 'Uranus',
     tagline: 'Install & update software',
     color: '#f9c74f',
     glow: '#f9c74f',
@@ -343,7 +343,7 @@ export const topics: Topic[] = [
   },
   {
     id: 'monitoring',
-    name: 'System',
+    name: 'Neptune',
     tagline: 'Inspect the machine',
     color: '#f28482',
     glow: '#f28482',
@@ -379,7 +379,7 @@ export const topics: Topic[] = [
   },
   {
     id: 'archives',
-    name: 'Archives',
+    name: 'Pluto',
     tagline: 'Compress & bundle files',
     color: '#c77dff',
     glow: '#c77dff',
