@@ -79,7 +79,7 @@ export function CommandDeck({
       </div>
 
       {filtered.length > 0 ? (
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 flex justify-center">
           {filtered.map((command) => (
             <Flashcard key={command.name} command={command} accent={topic.color} />
           ))}
