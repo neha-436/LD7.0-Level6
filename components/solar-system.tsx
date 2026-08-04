@@ -5,6 +5,7 @@ import { Search, X } from 'lucide-react'
 import { topics, type Topic, type Command } from '@/lib/commands'
 import { OrbitMap } from './orbit-map'
 import { Flashcard } from './flashcard'
+import Image from 'next/image'
 
 type Hit = { command: Command; topic: Topic }
 
@@ -40,11 +41,20 @@ export function SolarSystem({ onSelect }: { onSelect: (topic: Topic) => void }) 
     <div className="relative z-10 flex min-h-screen flex-col">
       {/* Top bar — heading + small search */}
       <header className="animate-rise flex flex-wrap items-center justify-between gap-3 px-4 py-4 sm:px-8">
-        <span className="rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 font-mono text-sm font-semibold uppercase tracking-[0.25em] text-primary">
-          LinuxDiary 7.0
-        </span>
-
-        <div className="flex w-full max-w-xs items-center gap-2 rounded-full border border-border bg-card/70 px-3.5 py-2 backdrop-blur-md focus-within:border-primary sm:w-auto">
+        <div className="flex items-center">
+<Image
+  src="/image.svg"
+  alt="LinuxDiary Logo"
+  width={80}
+  height={80}
+  priority
+  className="h-16 w-auto object-contain transition-all duration-300 ease-out hover:scale-110 hover:drop-shadow-[0_0_18px_rgba(34,211,238,0.8)]"
+/>
+        </div>
+        <span className="rounded-[10px] border border-cyan-400/60 bg-cyan-500/10 px-6 py-2.5 text-base sm:text-lg font-semibold tracking-wide text-cyan-300 shadow-[0_0_15px_rgba(34,211,238,0.45)] backdrop-blur-md transition-all duration-300 ease-out hover:-translate-y-1 hover:border-cyan-300 hover:bg-cyan-400/15 hover:text-cyan-100 hover:shadow-[0_0_12px_rgba(34,211,238,0.7),0_0_30px_rgba(34,211,238,0.45)]">
+  LinuxDiary 7.0
+</span>
+        {/* <div className="flex w-full max-w-xs items-center gap-2 rounded-full border border-border bg-card/70 px-3.5 py-2 backdrop-blur-md focus-within:border-primary sm:w-auto">
           <Search className="h-4 w-4 shrink-0 text-muted-foreground" />
           <input
             value={query}
@@ -63,7 +73,7 @@ export function SolarSystem({ onSelect }: { onSelect: (topic: Topic) => void }) 
               <X className="h-4 w-4" />
             </button>
           )}
-        </div>
+        </div> */}
       </header>
 
       {/* Results OR the revolving solar system */}

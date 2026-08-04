@@ -25,7 +25,7 @@ export default function Page() {
 
       {booted && (
         <footer className="relative z-10 pb-8 text-center font-mono text-xs text-muted-foreground">
-          LinuxDiary 7.0 · Command Constellation · Explore · Learn · Launch
+          LinuxDiary 7.0 · WARGAME 
         </footer>
       )}
     </main>

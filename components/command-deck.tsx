@@ -57,7 +57,7 @@ export function CommandDeck({
         </div>
       </header>
 
-      <div className="animate-rise mx-auto mt-6 flex max-w-sm items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-2.5 backdrop-blur-md focus-within:border-primary">
+      {/* <div className="animate-rise mx-auto mt-6 flex max-w-sm items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-2.5 backdrop-blur-md focus-within:border-primary">
         <Search className="h-4 w-4 shrink-0 text-muted-foreground" />
         <input
           value={query}
@@ -76,7 +76,7 @@ export function CommandDeck({
             <X className="h-4 w-4" />
           </button>
         )}
-      </div>
+      </div> */}
 
       {filtered.length > 0 ? (
         <div className="mt-8 flex justify-center">

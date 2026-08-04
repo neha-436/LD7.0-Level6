@@ -43,11 +43,11 @@ export function Planet({
           }}
         />
         {/* Command count badge */}
-        <span
+        {/* <span
           className="absolute -bottom-1 -right-1 flex h-7 min-w-7 items-center justify-center rounded-full border border-border bg-card px-1.5 font-mono text-xs font-semibold text-card-foreground"
         >
           {topic.commands.length}
-        </span>
+        </span> */}
       </span>
 
       <span className="text-center">

@@ -48,18 +48,22 @@ export function Flashcard({
 
         {/* BACK — details */}
         <div
-          className="absolute inset-0 flex flex-col overflow-hidden rounded-xl border p-4 text-left [backface-visibility:hidden] [transform:rotateY(180deg)]"
+          className="absolute inset-0 flex flex-col items-center justify-center overflow-hidden rounded-xl border p-4 text-left [backface-visibility:hidden] [transform:rotateY(180deg)]"
           style={{
             borderColor: `${accent}55`,
             background:
               'linear-gradient(160deg, var(--card), color-mix(in oklab, var(--card), black 12%))',
           }}
         >
+          <span
+            className="mb-3 h-2 w-2 rounded-full"
+            style={{ backgroundColor: accent, boxShadow: `0 0 12px ${accent}` }}
+          />
           <code
-            className="font-mono text-2xl font-bold text-card-foreground"
-            style={{ color: accent }}
+            className="font-mono text-2xl font-bold text-card-foreground justify-center text-align-center text-center"
+            // style={{ color: accent }}
           >
-            YES!
+            {command.description}
           </code>
           {/* <p className="mt-1.5 text-xs leading-relaxed text-card-foreground/90">
             {command.description}
@@ -82,14 +86,22 @@ export function Flashcard({
             <div className="flex-1" />
           )} */}
 
-          {/* {command.example ? (
-            <div className="mt-2 rounded-md border border-border bg-background/60 px-2 py-1.5">
-              <span className="font-mono text-[11px] text-primary">
+{command.image && (
+  <img
+    src={command.image}
+    alt={command.name}
+    className="h-29 w-auto transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-110 hover:drop-shadow-[0_0_25px_rgba(34,211,238,0.8)] mt-3"
+  />
+)}
+
+          {command.example ? (
+            <div className="mt-1 rounded-md border border-border bg-background/60 px-5 py-1.5">
+              <span className="font-mono text-[16px] text-primary">
                 <span className="text-muted-foreground">$ </span>
                 {command.example}
               </span>
             </div>
-          ) : null} */}
+          ) : null}
         </div>
       </div>
     </button>

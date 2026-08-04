@@ -108,9 +108,9 @@ export function OrbitMap({ onSelect }: { onSelect: (topic: Topic) => void }) {
                       boxShadow: `0 0 22px -2px ${topic.glow}, inset -6px -6px 18px rgba(0,0,0,0.45)`,
                     }}
                   />
-                  <span className="absolute -bottom-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full border border-border bg-card px-1 font-mono text-[10px] font-semibold text-card-foreground">
+                  {/* <span className="absolute -bottom-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full border border-border bg-card px-1 font-mono text-[10px] font-semibold text-card-foreground">
                     {topic.commands.length}
-                  </span>
+                  </span> */}
                 </span>
                 <span className="mt-1.5 whitespace-nowrap rounded-full bg-background/70 px-2 py-0.5 text-center text-xs font-semibold text-foreground backdrop-blur-sm">
                   {topic.name}
