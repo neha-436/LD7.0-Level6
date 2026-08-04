@@ -90,18 +90,18 @@ export function Flashcard({
   <img
     src={command.image}
     alt={command.name}
-    className="h-29 w-auto transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-110 hover:drop-shadow-[0_0_25px_rgba(34,211,238,0.8)] mt-3"
+    className="h-29 w-auto transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-110 hover:drop-shadow-[0_0_7px_rgba(34,211,238,0.8)] mt-1"
   />
 )}
 
           {command.example ? (
-            <div className="mt-1 rounded-md border border-border bg-background/60 px-5 py-1.5">
-              <span className="font-mono text-[16px] text-primary">
-                <span className="text-muted-foreground">$ </span>
-                {command.example}
-              </span>
-            </div>
-          ) : null}
+  <div className="mt-1 rounded-md border border-border bg-background/60 px-5 py-1.5 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.35)]">
+    <span className="font-mono text-[16px] text-primary transition-colors duration-300">
+      <span className="text-muted-foreground">$ </span>
+      {command.example}
+    </span>
+  </div>
+) : null}
         </div>
       </div>
     </button>
